@@ -1,5 +1,11 @@
 <template>
-  <div class="flex flex-col md:flex-row gap-10 items-center">
+  <div
+    ref="target"
+    :class="[
+      'flex flex-col md:flex-row gap-10 items-center mb-24 fade-in-up',
+      { 'is-visible': targetIsVisible },
+    ]"
+  >
     <div class="w-full md:w-1/2 flex gap-4 items-end justify-center">
       <NuxtImg
         :src="project.images.desktop"
@@ -46,10 +52,13 @@
           target="_blank"
           color="white"
           variant="link"
-          class="bg-[#F1ECD6] p-4 rounded-3xl items-center flex gap-3 w-fit text-background hover:bg-[#F1ECD6]/80 transition-colors"
+          class="bg-[#F1ECD6] p-4 rounded-3xl items-center flex gap-3 w-fit text-background hover:bg-[#F1ECD6]/80 transition-all duration-300 group"
         >
           <span class="font-bold">ver repositório</span>
-          <UIcon name="i-simple-icons-github" class="text-2xl" />
+          <UIcon
+            name="i-simple-icons-github"
+            class="text-2xl transition-transform duration-300 group-hover:translate-x-1"
+          />
         </UButton>
       </div>
     </div>
@@ -57,10 +66,26 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { useIntersectionObserver } from "@vueuse/core";
+
 defineProps({
   project: {
     type: Object,
     required: true,
   },
 });
+
+const target = ref(null);
+const targetIsVisible = ref(false);
+
+useIntersectionObserver(
+  target,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) {
+      targetIsVisible.value = isIntersecting;
+    }
+  },
+  { threshold: 0.1 }
+);
 </script>

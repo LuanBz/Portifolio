@@ -1,5 +1,6 @@
 <template>
   <div class="bg-[#F1ECD6] text-primary font-sans">
+    <AppHeader />
     <main>
       <slot />
     </main>

@@ -1,11 +1,11 @@
 <template>
   <div class="items-center justify-center">
-    <section class="min-h-screen flex items-center justify-center">
+    <section id="sobre" class="min-h-screen flex items-center justify-center">
       <div class="w-2/3 relative">
         <UContainer>
           <div class="border-2 border-hero-border rounded-4xl relative">
-            <div class="absolute top-4 right-6 text-4xl font-extrabold">
-              Full-Stack &lt;/&gt;
+            <div class="absolute top-4 right-6 text-6xl font-extrabold">
+              &lt;/&gt;
             </div>
 
             <p class="max-w-2/3 text-2xl mt-80 pb-20 px-12">
@@ -21,7 +21,9 @@
 
             <div class="absolute bg-[#F1ECD6] top-30 -left-20 p-5">
               <h2 class="font-serif text-5xl">Olá, eu sou</h2>
-              <h1 class="font-sans text-8xl font-bold">Luan Bezerra</h1>
+              <h1 class="font-sans text-8xl font-bold animate-typing">
+                Luan Bezerra
+              </h1>
             </div>
 
             <div
@@ -47,10 +49,11 @@
                 target="_blank"
                 color="white"
                 variant="outline"
-                class="flex gap-2 text-4xl"
+                class="flex gap-2 text-4xl transition-transform duration-300 transform hover:scale-110"
                 :ui="{
                   variant: {
-                    outline: 'ring-transparent text-primary hover:bg-primary/5',
+                    outline:
+                      'ring-transparent text-primary hover:bg-primary/10',
                   },
                 }"
               >
@@ -61,10 +64,11 @@
                 target="_blank"
                 color="white"
                 variant="outline"
-                class="flex gap-2 text-4xl"
+                class="flex gap-2 text-4xl transition-transform duration-300 transform hover:scale-110"
                 :ui="{
                   variant: {
-                    outline: 'ring-transparent text-primary hover:bg-primary/5',
+                    outline:
+                      'ring-transparent text-primary hover:bg-primary/10',
                   },
                 }"
               >
@@ -91,7 +95,10 @@
     <div class="bg-[#5A3B29] w-1/3 py-4 rounded-tr-full">
       <h2 class="text-4xl font-bold text-center text-[#F1ECD6]">Projetos</h2>
     </div>
-    <UContainer class="bg-[#251E0C] flex items-center justify-center">
+    <UContainer
+      id="projetos"
+      class="bg-[#251E0C] flex items-center justify-center"
+    >
       <div class="rounded-lg py-24 w-2/3 md:px-8">
         <ProjectCard
           v-for="project in projects"
