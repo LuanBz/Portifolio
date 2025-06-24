@@ -1,27 +1,13 @@
 <template>
-  <div class="bg-[#14191f] text-stone-300 min-h-screen">
-    <AppHeader />
+  <div class="bg-[#F1ECD6] text-primary font-sans">
     <main>
       <slot />
     </main>
+    <AppFooter />
   </div>
 </template>
 
 <script setup>
 import AppHeader from "~/components/AppHeader.vue";
-
-useHead({
-  bodyAttrs: {
-    style: `font-family: 'Space Grotesk', 'Noto Sans', sans-serif;`,
-  },
-  style: [
-    {
-      innerHTML: `
-        :root {
-          --primary-color: #dce7f3;
-        }
-      `,
-    },
-  ],
-});
+import AppFooter from "~/components/AppFooter.vue";
 </script>
