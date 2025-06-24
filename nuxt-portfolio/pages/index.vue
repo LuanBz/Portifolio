@@ -83,9 +83,11 @@
                 <UIcon name="i-simple-icons-nuxtdotjs" />
                 <UIcon name="i-simple-icons-react" />
                 <UIcon name="i-simple-icons-expo" />
+                <UIcon name="i-simple-icons-dotnet" />
                 <UIcon name="i-simple-icons-csharp" />
                 <UIcon name="i-simple-icons-git" />
                 <UIcon name="i-simple-icons-tailwindcss" />
+                <UIcon name="i-simple-icons-mysql" />
               </div>
             </div>
           </div>
